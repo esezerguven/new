@@ -3,6 +3,7 @@
     <head>
         <title>Lesson</title>
         <link rel="stylesheet" href="style.css">
+        <script type="text/javascript" src="calculate.js"></script>  
     </head>
     <body class="color-4">
         <div class="container">
@@ -11,31 +12,31 @@
                     0
                 </div>
                 <div class="buttons">
-                    <button id="clear" class="width-75 color-2">Clear</button>
-                    <button id="divide" class="width-25 color-4">/</button>
+                    <button id="clear" onclick="calculate('clear')" class="width-75 color-2">Clear</button>
+                    <button id="divide" onclick="calculate('/')" class="width-25 color-4">/</button>
                 </div>
                 <div class="buttons">
-                    <button id="7" class="width-25 color-3">7</button>
-                    <button id="8" class="width-25 color-3">8</button>
-                    <button id="9" class="width-25 color-3">9</button>
-                    <button id="X" class="width-25 color-4">X</button>
+                    <button id="7" onclick="calculate('7')" class="width-25 color-3">7</button>
+                    <button id="8" onclick="calculate('8')" class="width-25 color-3">8</button>
+                    <button id="9" onclick="calculate('9')" class="width-25 color-3">9</button>
+                    <button id="*" onclick="calculate('*')" class="width-25 color-4">*</button>
                 </div>
                 <div class="buttons">
-                    <button id="4" class="width-25 color-3">4</button>
-                    <button id="5" class="width-25 color-3">5</button>
-                    <button id="6" class="width-25 color-3">6</button>
-                    <button id="-" class="width-25 color-4">-</button>
+                    <button id="4" onclick="calculate('4')" class="width-25 color-3">4</button>
+                    <button id="5" onclick="calculate('5')" class="width-25 color-3">5</button>
+                    <button id="6" onclick="calculate('6')" class="width-25 color-3">6</button>
+                    <button id="-" onclick="calculate('-')" class="width-25 color-4">-</button>
                 </div>
                 <div class="buttons">
-                    <button id="1" class="width-25 color-3">1</button>
-                    <button id="2" class="width-25 color-3">2</button>
-                    <button id="3" class="width-25 color-3">3</button>
-                    <button id="+" class="width-25 color-4">+</button>
+                    <button id="1" onclick="calculate('1')" class="width-25 color-3">1</button>
+                    <button id="2" onclick="calculate('2')" class="width-25 color-3">2</button>
+                    <button id="3" onclick="calculate('3')" class="width-25 color-3">3</button>
+                    <button id="+" onclick="calculate('+')" class="width-25 color-4">+</button>
                 </div>
                 <div class="buttons">
-                    <button id="0" class="width-50 color-3">0</button>
-                    <button id="," class="width-25 color-3">,</button>
-                    <button id="*" class="width-25 color-4">*</button>
+                    <button id="0" onclick="calculate('0')" class="width-50 color-3">0</button>
+                    <button id="," onclick="calculate(',')" class="width-25 color-3">,</button>
+                    <button id="=" onclick="calculate('=')" class="width-25 color-4">=</button>
                 </div>
             </div>
         </div>
