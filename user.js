@@ -1,3 +1,15 @@
+/* const promise1 = fetch(url1); //2 saniye
+const promise2 = fetch(url2); // 5 saniye
+const promise3 = fetch(url3); // 7saniye
+
+Promise.all([promise1, promise2, promise3]).then(([veri1 ,veri2, veri3]) => {
+  console.log(values);
+});
+
+fetch(url)
+*/
+
+
 var isAuthentaced = localStorage.getItem("user");
 if(!isAuthentaced) {
     window.location.href= '/'
