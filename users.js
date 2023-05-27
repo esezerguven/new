@@ -1,3 +1,7 @@
+var isAuthentaced = localStorage.getItem("user");
+if(!isAuthentaced) {
+    window.location.href= '/'
+}
 fetch("https://dummyjson.com/users?limit=50")
   .then((response) => response.json())
   .then(
