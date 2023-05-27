@@ -1,3 +1,5 @@
-.bg-color-red {
-    background-color: red;
-}
+@media screen and (max-width:  768px) {
+    form {
+      background-image: url("https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp");;
+    }
+  }
