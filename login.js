@@ -1,5 +1,56 @@
-var username = $('[type*="email"]')
+var userName = 'kminchelle';
+var password = '0lelplR';
 
+var isAuthentaced = localStorage.getItem("user");
+if(isAuthentaced) {
+    window.location.href= '/user.html'
+}
+
+function login() {
+    var userEmail = $('[type*="email"]').val()
+    var userPassword = $('[type*="password"]').val()
+        
+    console.log(userEmail);
+    console.log(userPassword);
+
+    fetch('https://dummyjson.com/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            username: userEmail ,
+            password: userPassword,
+            // expiresInMins: 60, // optional
+        })
+        })
+        .then(res => res.json())
+        .then(
+            (json) => {
+                if (json.message) {
+                    console.log('Invalid USer')
+
+                    return;
+                }
+                
+                setWithExpiry('user', JSON.stringify(json), 60*60*60*24*365)
+
+                window.location.href = '/user.html';
+            }
+        );
+}
+
+
+
+function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+
+    // `item` is an object which contains the original value
+    // as well as the time when it's supposed to expire
+    const item = {
+        value: value,
+        expiry: now.getTime() + ttl,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+}
 
 
 
@@ -11,17 +62,6 @@ fetch("https://dummyjson.com/users?limit=50")
     });
 
 
-    function setWithExpiry(key, value, ttl) {
-        const now = new Date()
-    
-        // `item` is an object which contains the original value
-        // as well as the time when it's supposed to expire
-        const item = {
-            value: value,
-            expiry: now.getTime() + ttl,
-        }
-        localStorage.setItem(key, JSON.stringify(item))
-    }
 
 
 function createUsersHtml(users) {
